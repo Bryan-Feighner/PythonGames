@@ -51,6 +51,10 @@ def gameState():
         print('You have lost!\n')
         gameCount+=1
 while on == 1:
+    global gameCount
+    global winCount
+    global playerChoice
+    global computerChoice
     chooseNum()
     gameState()
     #winRate = winCount/gameCount
