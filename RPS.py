@@ -21,42 +21,36 @@ def chooseNum():
     else:
         computerChoice = 'scissors'
         print('The computer has selected scissors!')
-def gameState():
+def gameState(playerChoice, computerChoice):
     global winCount
     global gameCount
-    global playerChoice
-    global computerChoice
     if playerChoice == computerChoice:
         print('You have tied! Nobody wins!\n')
-        gameCount+=1
+        gameCount = 1 + gameCount
     elif playerChoice == 'rock' and computerChoice == 'scissors':
         print('You have won!\n')
-        gameCount+=1
-        winCount+=1
+        gameCount = 1 + gameCount
+        winCount = 1 + winCount
     elif playerChoice == 'scissors' and computerChoice == 'rock':
         print('You have lost!\n')
-        gameCount+=1
+        gameCount = 1 + gameCount
     elif playerChoice == 'rock' and computerChoice == 'paper':
         print('You have lost!\n')
-        gameCount+=1
+        gameCount = 1 + gameCount
     elif playerChoice == 'paper' and computerChoice == 'rock':
         print('You have won!\n')
-        gameCount+=1
-        winCount+=1
+        gameCount = 1 + gameCount
+        winCount = 1 + winCount
     elif playerChoice == 'scissors' and computerChoice == 'paper':
         print('You have won!\n')
-        gameCount+=1
-        winCount+=1
+        gameCount = 1 + gameCount
+        winCount = 1 + winCount
     elif playerChoice == 'paper' and computerChoice == 'scissors':
         print('You have lost!\n')
-        gameCount+=1
+        gameCount = 1 + gameCount
 while on == 1:
-    global gameCount
-    global winCount
-    global playerChoice
-    global computerChoice
     chooseNum()
-    gameState()
+    gameState(playerChoice, computerChoice)
     #winRate = winCount/gameCount
     print("You've won " + str(winCount) + " out of " + str(gameCount) + " games!\n")
     #print('Your current winrate is ' + str(winRate) + "\n")
