@@ -1,11 +1,10 @@
+from tkinter import *
 import random
-
-playerChoice = ''
-computerChoice = ''
-on = 1
-gameCount = 0
-winCount = 0
-winRate = 0.0
+playerChoice = StringVar(value='')
+computerChoice = StringVar(value='')
+gameCount = IntVar(value = 0)
+winCount = IntVar(value = 0)
+winRate = DoubleVar(value=0.0)
 def chooseNum():
     global playerChoice
     global computerChoice
@@ -13,13 +12,13 @@ def chooseNum():
     input(playerChoice)
     randomNum = random.randint(0,2)
     if randomNum == 2:
-        computerChoice = 'rock'
+        computerChoice.set('rock')
         print('The computer has selected rock!')
     elif randomNum == 1:
-        computerChoice = 'paper'
+        computerChoice.set('paper')
         print('The computer has selected paper!')
     else:
-        computerChoice = 'scissors'
+        computerChoice.set('scissors')
         print('The computer has selected scissors!')
 def gameState(playerChoice, computerChoice): # This entire section not working, not sure if it's an if statement issue?
     global winCount
@@ -48,11 +47,3 @@ def gameState(playerChoice, computerChoice): # This entire section not working, 
     elif playerChoice == 'paper' and computerChoice == 'scissors':
         print('You have lost!\n')
         gameCount = 1 + gameCount
-while on == 1:
-    chooseNum()
-    gameState(playerChoice, computerChoice)
-    #winRate = winCount/gameCount
-    print("You've won " + str(winCount) + " out of " + str(gameCount) + " games!\n")
-    #print('Your current winrate is ' + str(winRate) + "\n")
-    print("Would you like to play again? Type 1 for yes and 0 for no!\n")
-    input(on)

@@ -21,7 +21,7 @@ def chooseNum():
     else:
         computerChoice = 'scissors'
         print('The computer has selected scissors!')
-def gameState(playerChoice, computerChoice):
+def gameState(playerChoice, computerChoice): # This entire section not working, not sure if it's an if statement issue?
     global winCount
     global gameCount
     if playerChoice == computerChoice:
