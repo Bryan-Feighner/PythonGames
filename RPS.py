@@ -3,8 +3,8 @@ import random
 playerChoice = ''
 computerChoice = ''
 on = 1
-gameCount = 0
-winCount = 0
+gameCount = 1
+winCount = 1
 winRate = 0.0
 def chooseNum():
     global playerChoice
